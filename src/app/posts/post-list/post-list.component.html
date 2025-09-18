@@ -1,0 +1,41 @@
+<section class="page">
+    <header class="page__header">
+      <h1>Publicaciones</h1>
+      <button class="btn btn--primary" (click)="create()">+ Nueva</button>
+    </header>
+  
+    <div *ngIf="loading" class="card" style="display:flex;align-items:center;gap:8px;width:max-content;">
+        <app-spinner></app-spinner>
+        Cargando…
+      </div>
+  
+    <div class="table-wrap" *ngIf="!loading && posts.length">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>UserId</th>
+          <th>Contenido</th>
+          <th style="width: 220px;">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts">
+          <td>{{ post.id }}</td>
+          <td class="truncate" title="{{ post.title }}">{{ post.title }}</td>
+          <td>{{ post.userId }}</td>
+          <td class="truncate" title="{{ post.body }}">{{ post.body }}</td>
+          <td class="actions">
+            <button class="btn" (click)="view(post)">Ver</button>
+            <button class="btn btn--warn" (click)="edit(post)">Editar</button>
+            <button class="btn btn--danger" (click)="delete(post)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+  
+    <p *ngIf="!loading && !posts.length">No hay publicaciones para mostrar.</p>
+  </section>
+  
