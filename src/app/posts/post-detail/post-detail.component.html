@@ -1,0 +1,16 @@
+<section class="page">
+    <button class="btn" (click)="back()">← Volver</button>
+  
+    <div *ngIf="loading">Cargando…</div>
+    <div class="alert alert--error" *ngIf="errorMsg">{{ errorMsg }}</div>
+  
+    <article class="card" *ngIf="post && !loading">
+      <header class="card__header">
+        <h2>#{{ post.id }} — {{ post.title }}</h2>
+        <button class="btn btn--warn" (click)="edit()">Editar</button>
+      </header>
+      <p><strong>UserId:</strong> {{ post.userId }}</p>
+      <p class="body">{{ post.body }}</p>
+    </article>
+  </section>
+  

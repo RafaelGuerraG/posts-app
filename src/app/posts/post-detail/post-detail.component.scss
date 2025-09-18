@@ -1,0 +1,8 @@
+.page { padding: 16px; }
+.card { margin-top: 12px; padding: 16px; border: 1px solid #eee; border-radius: 12px; background: #fff; }
+.card__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.body { white-space: pre-wrap; }
+.btn { padding: 6px 10px; border: 1px solid #ddd; background: #fff; border-radius: 8px; cursor: pointer; }
+.btn--warn { background: #f59e0b; border-color: #f59e0b; color: #fff; }
+.alert { padding: 8px 12px; border-radius: 8px; margin: 8px 0; }
+.alert--error { background: #fee2e2; color: #991b1b; }
