@@ -1,0 +1,26 @@
+<form class="form" (ngSubmit)="submit()" [formGroup]="form" novalidate>
+    <div class="field">
+      <label>User ID</label>
+      <input type="number" formControlName="userId" placeholder="e.g. 1" />
+      <small class="error" *ngIf="f.userId.touched && f.userId.invalid">
+        Debe ser un número ≥ 1.
+      </small>
+    </div>
+  
+    <div class="field">
+      <label>Título</label>
+      <input type="text" formControlName="title" placeholder="Título de la publicación" />
+      <small class="error" *ngIf="f.title.touched && f.title.hasError('required')">Título requerido.</small>
+      <small class="error" *ngIf="f.title.touched && f.title.hasError('minlength')">Mínimo 3 caracteres.</small>
+    </div>
+  
+    <div class="field">
+      <label>Contenido</label>
+      <textarea rows="6" formControlName="body" placeholder="Contenido…"></textarea>
+      <small class="error" *ngIf="f.body.touched && f.body.hasError('required')">Contenido requerido.</small>
+      <small class="error" *ngIf="f.body.touched && f.body.hasError('minlength')">Mínimo 5 caracteres.</small>
+    </div>
+  
+    <button class="btn btn--primary" type="submit">{{ submitLabel }}</button>
+  </form>
+  

@@ -1,0 +1,5 @@
+.form { display: grid; gap: 12px; max-width: 720px; }
+.field { display: grid; gap: 6px; }
+input, textarea { padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
+.error { color: #b91c1c; }
+.btn--primary { padding: 8px 14px; background: #0ea5e9; border: 1px solid #0ea5e9; color: #fff; border-radius: 10px; cursor: pointer; }

@@ -1,0 +1,12 @@
+<section class="page" style="padding:16px;">
+    <h1>Editar publicación</h1>
+  
+    <div *ngIf="loading">Cargando…</div>
+    <div class="alert alert--error" *ngIf="errorMsg">{{ errorMsg }}</div>
+    <div class="alert alert--success" *ngIf="successMsg">{{ successMsg }}</div>
+  
+    <ng-container *ngIf="!loading && post">
+      <app-post-form [initial]="post" submitLabel="Guardar cambios" (submitted)="onSubmit($event)"></app-post-form>
+    </ng-container>
+  </section>
+  
